@@ -1,0 +1,8 @@
+.highlight {
+  animation: highlight 1.5s ease;
+}
+
+@keyframes highlight {
+  0% { background-color: $brand-warning; }
+  100% { background-color: $gray-lighter; }
+}

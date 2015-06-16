@@ -1,0 +1,4 @@
+// SMACSS structure
+@import "base";
+@import "layouts/common";
+@import "states"; // States are always last ones to load

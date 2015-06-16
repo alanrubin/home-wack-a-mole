@@ -1,0 +1,7 @@
+{
+  "name": "whack-a-mole",
+  "private": true,
+  "dependencies": {
+    "modernizr": "~2.8.2"
+  }
+}
