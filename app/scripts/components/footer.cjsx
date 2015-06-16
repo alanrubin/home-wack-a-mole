@@ -1,5 +1,4 @@
-# A coffeescript + react sample file
-React = require("react")
+React = require "react"
 
 Footer = React.createClass
   render: ->
