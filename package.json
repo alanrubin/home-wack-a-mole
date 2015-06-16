@@ -1,12 +1,13 @@
 {
   "name": "react-webapp",
   "dependencies": {
-    "bootstrap-sass": "~3.3.3",
-    "classnames": "~1.1.4",
+    "bootstrap-sass": "~3.3.4",
+    "classnames": "~2.1.2",
     "font-awesome": "~4.3.0",
-    "react": "~0.12",
-    "react-loader": "~1.2.0",
-    "reflux": "~0.2.7"
+    "react": "~0.13.3",
+    "react-router": "~0.13.3",
+    "reflux": "~0.2.8",
+    "react-loader": "~1.4.0"
   },
   "devDependencies": {
     "browserify": "~9.0.3",

@@ -24,9 +24,7 @@ var env = "dev";
 // That makes development much more faster as those dependencies won't be built by watchify
 // Try to put libraries (specially big ones) in this list
 var dependencies = [
-  "jquery",
-  "react",
-  "react/addons"
+  "react"
 ];
 
 gulp.task("clean:dev", function() {
