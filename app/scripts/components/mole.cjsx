@@ -2,8 +2,13 @@ React = require "react"
 
 Mole = React.createClass
   render: ->
-    <div className="mole text-center">
+    <a href className="mole text-center">
       <h3 className="task">Do the laundry!</h3>
-    </div>
+      <div className="person">
+        <img src="images/baby.svg"/>
+      </div>
+      <div className="hole">
+      </div>
+    </a>
 
 module.exports = Mole

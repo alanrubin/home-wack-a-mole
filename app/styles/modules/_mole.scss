@@ -1,11 +1,31 @@
 .mole {
-  background: transparent url(../images/hole-bg.png) center center no-repeat;
-  background-size: contain;
+  -webkit-transition: top 0.25s, bottom 0.25s;
 
-  min-height: 220px;
-  min-width: 220px;
+  .hole {
+    height: 70px;
+    background: transparent url(../images/hole-bg.png) center center no-repeat;
+    background-size: contain;
+  }
+
+  .person {
+    min-height: 120px;
+
+    img {
+      position: absolute;
+      bottom: 30px;
+      left: 37%;
+      height: 120px;
+      -webkit-transition-property: top, bottom;
+      -webkit-transition-duration: 0.5s;
+
+      &:hover {
+        bottom: 100px;
+      }
+    }
+  }
 
   .task {
     font-family: "Bangers", sans-serif;
+    color: purple;
   }
 }
