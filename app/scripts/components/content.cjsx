@@ -1,20 +1,41 @@
-React = require("react")
+React = require "react"
+Mole = require "./mole"
 
 Content = React.createClass
   render: ->
-    <div id="content" className="content-fluid">
+    <div id="content" className="container-fluid">
       <div className="row">
         <div className="col-sm-8">
-          Main Area
+          <div id="game-panel">
+            <div className="row">
+              <div className="col-sm-4">
+                <Mole/>
+              </div>
+              <div className="col-md-offset-4 col-sm-4">
+                <Mole/>
+              </div>
+            </div>
+            <div className="row">
+              <div className="col-md-offset-4 col-sm-4">
+                <Mole/>
+              </div>
+            </div>
+            <div className="row">
+              <div className="col-sm-4">
+                <Mole/>
+              </div>
+              <div className="col-md-offset-4 col-sm-4">
+                <Mole/>
+              </div>
+            </div>
+          </div>
         </div>
         <div className="col-sm-4 text-center">
           <h2>Tasks-@-home</h2>
           <form className="default-margin form-inline">
             <div className="form-group">
               <label className="sr-only" htmlFor="exampleInputAmount">Task description to add or edit</label>
-              <div className="input-group">
-                <input type="text" className="form-control" id="taskToAdd" placeholder="Task description"/>
-              </div>
+              <input type="text" className="form-control" id="taskToAdd" placeholder="Task description"/>
             </div>
             <button type="submit" className="btn btn-primary">Add</button>
           </form>

@@ -2,14 +2,12 @@ React = require "react"
 Router = require "react-router"
 App = require "./components/app"
 Home = require "./components/home"
-About = require "./components/about"
-Contact = require "./components/contact"
+Content = require "./components/content"
 
 routes =
   <Router.Route name="app" path="/" handler={App}>
     <Router.DefaultRoute handler={Home}/>
-    <Router.Route name="about" handler={About} />
-    <Router.Route name="contact" handler={Contact} />
+    <Router.Route name="content" handler={Content} />
   </Router.Route>
 
 exports.start = ->

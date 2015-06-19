@@ -1,0 +1,11 @@
+.mole {
+  background: transparent url(../images/hole-bg.png) center center no-repeat;
+  background-size: contain;
+
+  min-height: 220px;
+  min-width: 220px;
+
+  .task {
+    font-family: "Bangers", sans-serif;
+  }
+}
