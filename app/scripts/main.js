@@ -1,5 +1,6 @@
 "use strict";
 
-var Router = require("./router");
+var React = require("react"),
+    App = require("./components/app");
 
-Router.start();
+React.render(<App/>, document.body)
