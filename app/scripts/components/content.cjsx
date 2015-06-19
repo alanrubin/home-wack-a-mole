@@ -2,6 +2,10 @@ React = require "react"
 Mole = require "./mole"
 
 Content = React.createClass
+
+  onTaskComplete: (task) ->
+    console.log "Completed Task !", task.name
+
   render: ->
     <div id="content" className="container-fluid">
       <div className="row">
@@ -9,7 +13,7 @@ Content = React.createClass
           <div id="game-panel">
             <div className="row">
               <div className="col-sm-4">
-                <Mole/>
+                <Mole image="images/baby.svg" task={{id: 0, name: "Clean the house !"}} onTaskComplete={@onTaskComplete}/>
               </div>
               <div className="col-md-offset-4 col-sm-4">
                 <Mole/>

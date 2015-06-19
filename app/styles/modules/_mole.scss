@@ -1,5 +1,4 @@
 .mole {
-  -webkit-transition: top 0.25s, bottom 0.25s;
 
   .hole {
     height: 70px;
@@ -15,13 +14,18 @@
       bottom: 30px;
       left: 37%;
       height: 120px;
-      -webkit-transition-property: top, bottom;
+      -webkit-transition-property: top, bottom, opacity;
       -webkit-transition-duration: 0.5s;
+      opacity: 0;
+    }
 
-      &:hover {
+    &.active {
+      img {
+        opacity: 1;
         bottom: 100px;
       }
     }
+
   }
 
   .task {
