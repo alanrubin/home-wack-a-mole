@@ -5,9 +5,8 @@ Footer = require "./footer"
 
 App = React.createClass
   render: ->
-    <div className="container">
+    <div className="app">
       <Header/>
-      <Router.RouteHandler/>
       <Footer/>
     </div>
 
