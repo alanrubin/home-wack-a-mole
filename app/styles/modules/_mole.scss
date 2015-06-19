@@ -19,17 +19,22 @@
       opacity: 0;
     }
 
-    &.active {
-      img {
-        opacity: 1;
-        bottom: 100px;
-      }
-    }
-
   }
 
   .task {
     font-family: "Bangers", sans-serif;
     color: purple;
+    visibility: hidden;
+  }
+
+  &.up {
+    .task {
+      visibility: visible;
+    }
+
+    img {
+      opacity: 1;
+      bottom: 80px;
+    }
   }
 }
