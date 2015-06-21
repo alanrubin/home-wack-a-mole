@@ -30,6 +30,7 @@ Content = React.createClass
     )
 
   onTaskCompleted: ->
+    # Increase score by 1
     @setState score: @state.score + 1
 
   render: ->
