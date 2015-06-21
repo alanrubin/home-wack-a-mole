@@ -17,8 +17,8 @@ Content = React.createClass
     @state.timer > 0
 
   onGameStart: ->
-    # Reset game: Game has 30s duration and initial score is 0
-    @setState timer: 30, score: 0
+    # Reset game: Game has 10s duration and initial score is 0
+    @setState timer: 10, score: 0
 
     # running every 1s
     @intervalId = setInterval(
