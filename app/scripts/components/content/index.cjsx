@@ -12,16 +12,16 @@ Content = React.createClass
       timer: 0 # 0 means game has not started yet
       score: 0
       tasks: [
-        {id: 0, name: "Clean the house"}
-        {id: 1, name: "Do the laundry"}
-        {id: 2, name: "Take care of the baby"}
-        {id: 3, name: "Drop the kids at the school"}
-        {id: 4, name: "Cook for the weekend"}
-        {id: 5, name: "Fuel the car"}
-        {id: 6, name: "Clean the garden"}
-        {id: 7, name: "Pay the bills"}
-        {id: 8, name: "Clean the garden"}
-        {id: 9, name: "Call your mother-in-law"}
+        {name: "Clean the house"}
+        {name: "Do the laundry"}
+        {name: "Take care of the baby"}
+        {name: "Drop the kids at the school"}
+        {name: "Cook for the weekend"}
+        {name: "Fuel the car"}
+        {name: "Clean the garden"}
+        {name: "Pay the bills"}
+        {name: "Clean the garden"}
+        {name: "Call your mother-in-law"}
       ]
     }
 

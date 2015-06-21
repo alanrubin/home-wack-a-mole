@@ -2,6 +2,9 @@ React = require "react"
 
 TaskBar = React.createClass
   render: ->
+    tasksList = @props.tasks.map (task, index) ->
+      <li key={index} className="list-group-item">{task.name} <a href className="pull-right"><i className="fa fa-lg fa-trash-o"></i></a></li>
+
     <div className="text-center">
       <h2>Tasks</h2>
       <form className="default-margin form-inline">
@@ -12,11 +15,7 @@ TaskBar = React.createClass
         <button type="submit" className="btn btn-primary">Add</button>
       </form>
       <ul className="list-group text-left">
-        <li className="list-group-item">Cras justo odio <a href className="pull-right"><i className="fa fa-lg fa-trash-o"></i></a></li>
-        <li className="list-group-item">Dapibus ac facilisis in <a href className="pull-right"><i className="fa fa-lg fa-trash-o"></i></a></li>
-        <li className="list-group-item">Morbi leo risus <a href className="pull-right"><i className="fa fa-lg fa-trash-o"></i></a></li>
-        <li className="list-group-item">Porta ac consectetur ac <a href className="pull-right"><i className="fa fa-lg fa-trash-o"></i></a></li>
-        <li className="list-group-item">Vestibulum at eros <a href className="pull-right"><i className="fa fa-lg fa-trash-o"></i></a></li>
+        {tasksList}
       </ul>
     </div>
 

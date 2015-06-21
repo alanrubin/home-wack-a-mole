@@ -6,7 +6,8 @@
     "font-awesome": "~4.3.0",
     "react": "~0.13.3",
     "reflux": "~0.2.8",
-    "react-loader": "~1.4.0"
+    "react-loader": "~1.4.0",
+    "jquery": "~2.1.4"
   },
   "devDependencies": {
     "browserify": "~9.0.3",
