@@ -3,6 +3,7 @@ React = require "react"
 ScoreAndTimer = React.createClass
 
   _formatNumber: (numberToFormat) ->
+    # Make sure number has always 00 format
     ("0" + numberToFormat).slice(-2)
 
   render: ->
