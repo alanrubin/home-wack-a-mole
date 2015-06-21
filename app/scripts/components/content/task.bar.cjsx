@@ -3,7 +3,7 @@ React = require "react"
 TaskBar = React.createClass
   render: ->
     <div className="text-center">
-      <h2>Tasks-@-home</h2>
+      <h2>Tasks</h2>
       <form className="default-margin form-inline">
         <div className="form-group">
           <label className="sr-only" htmlFor="exampleInputAmount">Task description to add or edit</label>

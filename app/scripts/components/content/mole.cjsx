@@ -13,9 +13,9 @@ Mole = React.createClass
     # Setting configuration
     @config =
       # This property indicates the likelihood a mole that's currently down will pop up (percentage). Modify this value to change the game difficulty.
-      popupPerc: 1
+      popupPerc: 3
       # This property indicates how long a mole will stay visible once it has popped up (in ms)
-      popupLength: 3000
+      popupLength: 800
       # The frame length for the checking algorithm, default runs 20 times a second (50ms)
       frameLength: 50
 

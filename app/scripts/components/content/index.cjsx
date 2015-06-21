@@ -13,6 +13,8 @@ Content = React.createClass
       score: 0
     }
 
+  _isGameRunning: ->
+    @state.timer > 0
 
   onGameStart: ->
     # Reset game: Game has 30s duration and initial score is 0
@@ -21,11 +23,13 @@ Content = React.createClass
     # running every 1s
     @intervalId = setInterval(
       =>
-        # Calculate new timer, set new state
-        newTimer = @state.timer-1
-        @setState timer: newTimer
-        # Stop timer if reached 0
-        clearInterval(@intervalId) if newTimer is 0
+        if @_isGameRunning()
+          # Calculate new timer, set new state
+          newTimer = @state.timer-1
+          @setState timer: newTimer
+        else
+          # Stop timer if reached 0
+          clearInterval(@intervalId)
       1000
     )
 
@@ -34,8 +38,11 @@ Content = React.createClass
     @setState score: @state.score + 1
 
   render: ->
-    # If game has not started, them show start panel otherwise moles area
-    gamePanel = if @state.timer > 0 then <MolesArea onTaskComplete={@onTaskCompleted}/> else <Start onStartClick={@onGameStart}/>
+    # If game is running, then show moles area otherwise the start
+    gamePanel = if @_isGameRunning() then <MolesArea onTaskComplete={@onTaskCompleted}/> else <Start score={@state.score} onStartClick={@onGameStart}/>
+
+    # Show task list when not running, show score/timer when running
+    sideBar = if @_isGameRunning() then <ScoreAndTimer timer={@state.timer} score={@state.score}/> else <TaskBar/>
 
     <div id="content" className="container-fluid">
       <div className="row">
@@ -43,16 +50,7 @@ Content = React.createClass
           {gamePanel}
         </div>
         <div className="col-sm-4">
-          <div className="row">
-            <div className="col-sm-12">
-              <ScoreAndTimer timer={@state.timer} score={@state.score}/>
-            </div>
-          </div>
-          <div className="row">
-            <div className="col-sm-12">
-              <TaskBar/>
-            </div>
-          </div>
+          {sideBar}
         </div>
       </div>
     </div>
