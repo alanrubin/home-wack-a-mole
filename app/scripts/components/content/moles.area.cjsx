@@ -3,30 +3,17 @@ Mole = require "./mole"
 
 MolesArea = React.createClass
 
-  tasks: [
-    {id: 0, name: "Clean the house"}
-    {id: 1, name: "Do the laundry"}
-    {id: 2, name: "Take care of the baby"}
-    {id: 3, name: "Drop the kids at the school"}
-    {id: 4, name: "Cook for the weekend"}
-    {id: 5, name: "Fuel the car"}
-    {id: 6, name: "Clean the garden"}
-    {id: 7, name: "Pay the bills"}
-    {id: 8, name: "Clean the garden"}
-    {id: 9, name: "Call your mother-in-law"}
-  ]
-
   _randomTask: ->
-    @tasks[Math.floor(Math.random() * (@tasks.length-1))]
+    @props.tasks[Math.floor(Math.random() * (@props.tasks.length-1))]
 
   getInitialState: ->
     {
       tasksToDo:
-        0: @tasks[0]
-        1: @tasks[1]
-        2: @tasks[2]
-        3: @tasks[3]
-        4: @tasks[4]
+        0: @props.tasks[0]
+        1: @props.tasks[1]
+        2: @props.tasks[2]
+        3: @props.tasks[3]
+        4: @props.tasks[4]
     }
 
   onTaskComplete: (moleId, task) ->
