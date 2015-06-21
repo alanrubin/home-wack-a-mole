@@ -4,7 +4,10 @@ Start = React.createClass
   render: ->
     message =
       if @props.score > 0
-        <h1>Game over ! Congratulations, your score is {@props.score} !!!</h1>
+        <div>
+          <h1>Game over !</h1>
+          <h1>Congratulations, your score is {@props.score} !!!</h1>
+        </div>
       else
         <h1>Welcome to Home Wack-A-Mole</h1>
 
