@@ -10,6 +10,10 @@ CurrentUserStore = Reflux.createStore
   getInitialState: ->
     @data
 
+  onSignin: ->
+    @data.loading = true
+    @trigger @data
+
   onSigninCompleted: (currentUser) ->
     @data = currentUser
     @trigger @data

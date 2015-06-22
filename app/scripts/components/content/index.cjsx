@@ -6,10 +6,12 @@ ScoreAndTimer = require "./score.and.timer"
 Start = require "./start"
 Reflux = require "reflux"
 TasksStore = require "../../stores/tasks"
+CurrentUserStore = require "../../stores/current.user"
+Loader = require "react-loader"
 
 Content = React.createClass
 
-  mixins: [Reflux.connect(TasksStore, "tasks")]
+  mixins: [Reflux.connect(TasksStore, "tasks"), Reflux.connect(CurrentUserStore, "currentUser")]
 
   getInitialState: ->
     {
@@ -46,15 +48,17 @@ Content = React.createClass
     # Show task list when not running, show score/timer when running
     sideBar = if @_isGameRunning() then <ScoreAndTimer timer={@state.timer} score={@state.score}/> else <TaskBar tasks={@state.tasks}/>
 
-    <div id="content" className="container-fluid">
-      <div className="row">
-        <div className="col-sm-8">
-          {gamePanel}
-        </div>
-        <div className="col-sm-4">
-          {sideBar}
+    <Loader loaded={not @state.currentUser.loading}>
+      <div id="content" className="container-fluid">
+        <div className="row">
+          <div className="col-sm-8">
+            {gamePanel}
+          </div>
+          <div className="col-sm-4">
+            {sideBar}
+          </div>
         </div>
       </div>
-    </div>
+    </Loader>
 
 module.exports = Content
