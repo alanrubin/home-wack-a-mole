@@ -1,8 +1,22 @@
 React = require "react"
+CurrentUserStore = require "../stores/current.user"
+Reflux = require "reflux"
+CurrentUserActions = require "../actions/current.user"
 
 Header = React.createClass
 
+  mixins: [Reflux.connect(CurrentUserStore)]
+
+  onSignin: ->
+    CurrentUserActions.signin()
+
   render: ->
+    signin =
+      if @state.name
+        <p className="navbar-text navbar-right">Signed in as {@state.name}</p>
+      else
+        <button onClick={@onSignin} type="button" className="btn navbar-right btn-default navbar-btn">Sign in</button>
+
     <nav id="header" className="navbar navbar-inverse">
       <div className="container-fluid">
         <div className="navbar-header">
@@ -16,7 +30,7 @@ Header = React.createClass
         </div>
 
         <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-          <p className="navbar-text navbar-right">Signed in as Alan Rubin</p>
+          {signin}
         </div>
       </div>
     </nav>
