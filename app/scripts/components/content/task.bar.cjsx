@@ -1,6 +1,14 @@
 React = require "react"
+TasksActions = require "../../actions/tasks"
 
 TaskBar = React.createClass
+  onAddTask: (event) ->
+    event.preventDefault()
+
+    TasksActions.add(React.findDOMNode(@refs.newTask).value)
+
+    React.findDOMNode(@refs.newTask).value = ""
+
   render: ->
     tasksList = @props.tasks.map (task, index) ->
       <li key={index} className="list-group-item">{task.name} <a href className="pull-right"><i className="fa fa-lg fa-trash-o"></i></a></li>
@@ -10,9 +18,9 @@ TaskBar = React.createClass
       <form className="default-margin form-inline">
         <div className="form-group">
           <label className="sr-only" htmlFor="exampleInputAmount">Task description to add or edit</label>
-          <input type="text" className="form-control" id="taskToAdd" placeholder="Task description"/>
+          <input ref="newTask" type="text" className="form-control" id="taskToAdd" placeholder="Task description"/>
         </div>
-        <button type="submit" className="btn btn-primary">Add</button>
+        <button onClick={@onAddTask} type="submit" className="btn btn-primary">Add</button>
       </form>
       <ul className="list-group text-left">
         {tasksList}

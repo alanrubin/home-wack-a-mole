@@ -1,6 +1,9 @@
 Reflux = require "reflux"
+TasksActions = require "../actions/tasks"
 
 TasksStore = Reflux.createStore
+
+  listenables: TasksActions
 
   data: [
     {name: "Clean the house"}
@@ -20,5 +23,9 @@ TasksStore = Reflux.createStore
 
   getInitialState: ->
     @data
+
+  onAdd: (newTask) ->
+    @data.push {name: newTask}
+    @trigger @data
 
 module.exports = TasksStore
