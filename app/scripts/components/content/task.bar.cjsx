@@ -9,9 +9,14 @@ TaskBar = React.createClass
 
     React.findDOMNode(@refs.newTask).value = ""
 
+  onRemoveTask: (task, event) ->
+    event.preventDefault()
+
+    TasksActions.remove(task)
+
   render: ->
-    tasksList = @props.tasks.map (task, index) ->
-      <li key={index} className="list-group-item">{task.name} <a href className="pull-right"><i className="fa fa-lg fa-trash-o"></i></a></li>
+    tasksList = @props.tasks.map (task, index) =>
+      <li key={index} className="list-group-item">{task.name} <a onClick={@onRemoveTask.bind(@, task)} href className="pull-right"><i className="fa fa-lg fa-trash-o"></i></a></li>
 
     <div className="text-center">
       <h2>Tasks</h2>

@@ -28,4 +28,10 @@ TasksStore = Reflux.createStore
     @data.push {name: newTask}
     @trigger @data
 
+  onRemove: (task) ->
+    index = @data.indexOf(task)
+    @data.splice(index, 1)
+
+    @trigger @data
+
 module.exports = TasksStore
