@@ -4,25 +4,17 @@ MolesArea = require "./moles.area"
 TaskBar = require "./task.bar"
 ScoreAndTimer = require "./score.and.timer"
 Start = require "./start"
+Reflux = require "reflux"
+TasksStore = require "../../stores/tasks"
 
 Content = React.createClass
+
+  mixins: [Reflux.connect(TasksStore, "tasks")]
 
   getInitialState: ->
     {
       timer: 0 # 0 means game has not started yet
       score: 0
-      tasks: [
-        {name: "Clean the house"}
-        {name: "Do the laundry"}
-        {name: "Take care of the baby"}
-        {name: "Drop the kids at the school"}
-        {name: "Cook for the weekend"}
-        {name: "Fuel the car"}
-        {name: "Clean the garden"}
-        {name: "Pay the bills"}
-        {name: "Clean the garden"}
-        {name: "Call your mother-in-law"}
-      ]
     }
 
   _isGameRunning: ->
