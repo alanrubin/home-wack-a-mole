@@ -3,8 +3,10 @@ require 'json'
 
 set :protection, :except => [:json_csrf]
 
+set :public_folder, 'dist'
+
 get '/' do
-  "hello world"
+  File.read(File.join('dist', 'index.html'))
 end
 
 get '/server/signin' do
