@@ -3,6 +3,10 @@ require 'json'
 
 set :protection, :except => [:json_csrf]
 
+get '/' do
+  "hello world"
+end
+
 get '/server/signin' do
   sleep 1
   headers "Content-Type"   => "application/json;charset=utf-8"
